@@ -1,19 +1,14 @@
-# Football Match Outcome Predictor 
+# Прогноз исходов футбольных матчей
 
-The model has been trained on 25 years of historical results (1999-2024). It makes predictions based on past encounters between the teams and their current form. Please note that these predictions are not guaranteed to be accurate and should be used as a guide rather than a definitive forecast. Factors not accounted for by the model can influence match outcomes.The predictions should not be used for betting or gambling purposes.
+Модель обучена на 25-летней истории результатов (1999-2024). Она делает прогнозы на основе прошлых встреч команд и их текущей формы. Обратите внимание, что эти прогнозы не гарантированно точны и должны использоваться как ориентир, а не как окончательный прогноз. Факторы, не учтенные моделью, могут влиять на исходы матчей. Прогнозы не следует использовать для ставок или азартных игр.
 
-You can try it out from here ⬇️ 
+## Доступные лиги:
 
-1. [Link1](https://football-match-predictor.streamlit.app/)
-2. [Link2](https://football-predictor.streamlit.app/)
+1. Bundesliga (Немецкая лига)
+2. Premier League (Английская лига)
+3. La Liga (Испанская лига)
+4. Serie A (Итальянская лига)
 
-## The leagues that are available are :
+## Данные 
 
-1. Bundesliga (German League)
-2. Premier League (English League)
-3. La Liga (Spanish League)
-4. Serie A (Italian League)
-
-## Dataset 
-
-The dataset for every league is available under each league folder. The total dataset of all the leagues is available under totaldata.csv
+Набор данных для каждой лиги доступен в соответствующей папке лиги. Общий набор данных всех лиг доступен в файле totaldata.csv
