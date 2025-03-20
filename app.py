@@ -6,12 +6,12 @@ from SerieA.seriea import seriea
 from home import home_page
 
 def main():
-    st.set_page_config(page_title='Football Match Outcome Predictor', page_icon='⚽', layout='centered', initial_sidebar_state='auto')
+    st.set_page_config(page_title='Прогноз исходов футбольных матчей', page_icon='⚽', layout='centered', initial_sidebar_state='auto')
 
-    st.sidebar.header("Select the League")
-    selected_page = st.sidebar.radio("Choose", ["Home", "Bundesliga","EPL","La Liga", "Serie A"])
+    st.sidebar.header("Выберите лигу")
+    selected_page = st.sidebar.radio("Выбрать", ["Главная", "Bundesliga","EPL","La Liga", "Serie A"])
 
-    if selected_page == "Home":
+    if selected_page == "Главная":
         home_page()
     elif selected_page == "Bundesliga":
         bundesliga()

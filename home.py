@@ -6,29 +6,29 @@ def home_page():
 
     st.image("logo1.png",width=150)
 
-    st.title("Football Match Outcome Predictor ⚽")
+    st.title("Прогноз исходов футбольных матчей ⚽")
 
-    st.write("This web app predicts the outcome of football matches in the top European leagues like: Bundesliga, EPL, La Liga, Serie A")
+    st.write("Это веб-приложение прогнозирует исходы футбольных матчей в ведущих европейских лигах: Bundesliga, EPL, La Liga, Serie A")
 
-    st.info("While navigating through different leagues kindly please refresh the site for better performance")
+    st.info("При переходе между разными лигами, пожалуйста, обновляйте сайт для лучшей производительности")
 
-    st.write("Select the league from the sidebar to get started")
+    st.write("Выберите лигу на боковой панели, чтобы начать")
 
     container = st.container()
 
     with container:
-        st.write("* Bundesliga: German Football League")
+        st.write("* Bundesliga: Немецкая футбольная лига")
         st.text("")
-        st.write("* EPL: English Premier League")
+        st.write("* EPL: Английская Премьер-лига")
         st.text("")
-        st.write("* La Liga: Spanish Football League")
+        st.write("* La Liga: Испанская футбольная лига")
         st.text("")
-        st.write("* Serie A: Italian Football League")
+        st.write("* Serie A: Итальянская футбольная лига")
         st.text("")
 
-    st.info("The model has been trained on 25 years of historical results (1999-2024). It makes predictions based on past encounters between the teams and their current form. Please note that these predictions are not guaranteed to be accurate and should be used as a guide rather than a definitive forecast. Factors not accounted for by the model can influence match outcomes.The predictions should not be used for betting or gambling purposes.")
+    st.info("Модель обучена на 25-летней истории результатов (1999-2024). Она делает прогнозы на основе прошлых встреч команд и их текущей формы.")
 
-    st.success("Thanks for visiting 🤩!!")
+    st.success(" ")
 
 if __name__ == "__main__":
     home_page()

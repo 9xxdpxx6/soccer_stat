@@ -1,4 +1,3 @@
-
 import pandas as pd
 import streamlit as st
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -107,12 +106,12 @@ def seriea():
 
     st.image('SerieA/logo.png', width=200)
 
-    st.title('Serie A Football Match Outcome Predictor')
+    st.title('Прогноз исходов матчей Серии А')
 
-    Note_message = """The model has been trained on 25 years of historical results (1999-2024). It makes predictions based on past encounters between the teams and their current form. Please note that these predictions are not guaranteed to be accurate and should be used as a guide rather than a definitive forecast. Factors not accounted for by the model can influence match outcomes."""
+    Note_message = """Модель обучена на 25-летней истории результатов (1999-2024). Она делает прогнозы на основе прошлых встреч команд и их текущей формы."""
     
     st.write("")
-    with st.expander("Note", expanded=False):
+    with st.expander("Примечание", expanded=False):
         st.markdown(Note_message)
 
     team_names = [
@@ -124,16 +123,16 @@ def seriea():
         'Carpi', 'Crotone', 'Benevento', 'Spal', 'Spezia', 'Salernitana', 'Monza', 'Cremonese',
     ]
 
-    highlighted_team_names = ', '.join([f"<span style='color: blue;'>{name}</span>" for name in team_names])
-    st.write("Please follow the naming convention for the team names. The conventions are: ")
+    highlighted_team_names = ', '.join([f"<span style='color: white;'>{name}</span>" for name in team_names])
+    st.write("Пожалуйста, соблюдайте формат названий команд. Доступные команды: ")
     st.markdown(f"{highlighted_team_names}", unsafe_allow_html=True)
 
-    HomeTeam = st.text_input('Enter Home Team:')
-    AwayTeam = st.text_input('Enter Away Team:')
+    HomeTeam = st.text_input('Введите домашнюю команду:')
+    AwayTeam = st.text_input('Введите гостевую команду:')
 
-    if st.button('Predict'):
+    if st.button('Сделать прогноз'):
         if HomeTeam and AwayTeam:
-            with st.spinner('Processing...'):
+            with st.spinner('Обработка...'):
                 if 'home_goal_model' not in st.session_state or 'away_goal_model' not in st.session_state:
                     matches = load_data()
                     X, y_home, y_away = preprocess_data(matches)
@@ -149,23 +148,21 @@ def seriea():
                     matches = st.session_state['matches']
 
                 result, home_goals, away_goals = predict_match(HomeTeam, AwayTeam, matches, preprocessor, home_goal_model, away_goal_model)
-            st.success('Done!')
-            st.write(f'Predicted goals: {HomeTeam} {home_goals} - {away_goals} {AwayTeam}')
+            st.success('Готово!')
+            st.write(f'Прогноз голов: {HomeTeam} {home_goals} - {away_goals} {AwayTeam}')
 
             if result == 'Home Win':
                 winning_team = HomeTeam
-                st.write(f'The match result prediction: {winning_team} wins the match!')   
-                st.balloons()
+                st.write(f'Прогноз результата матча: {winning_team} выигрывает матч!')   
 
             elif result == 'Away Win':
                 winning_team = AwayTeam
-                st.write(f'The match result prediction: {winning_team} wins the match!')
-                st.balloons()
+                st.write(f'Прогноз результата матча: {winning_team} выигрывает матч!')
             else:
                 winning_team = 'Draw'
-                st.write(f'The match result prediction: The match ends in a draw!')
+                st.write(f'Прогноз результата матча: Матч заканчивается ничьей!')
         else:
-            st.write('Please enter both team names.')
+            st.write('Пожалуйста, введите названия обеих команд.')
 
 if __name__ == "__main__":
     seriea()
